@@ -61,7 +61,7 @@ namespace inventory_materila
             Graphics graph = e.Graphics;
 
             //Draw border
-            using (Pen penBorder = new Pen(borderColor, borderSize))
+            using (Pen penBorder = new Pen(borderColor, borderSize)) ;
         }
 
         public Form2()
