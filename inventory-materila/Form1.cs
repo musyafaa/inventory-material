@@ -72,5 +72,10 @@ namespace inventory_materila
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
