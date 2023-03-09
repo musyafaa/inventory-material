@@ -44,7 +44,7 @@ namespace inventory_materila
         {
             MySqlConnection conn = konn.GetConn();
             conn.Open();
-            cmd = new MySqlCommand("SELECT * FROM login WHERE username='" + txtUsername.Text + "' AND password='" + txtPassword.Text + "'", conn);
+            cmd = new MySqlCommand("SELECT * FROM auth WHERE username='" + txtUsername.Text + "' AND password='" + txtPassword.Text + "'", conn);
             rd = cmd.ExecuteReader();
             rd.Read();
             if (rd.HasRows)
@@ -64,6 +64,11 @@ namespace inventory_materila
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

@@ -41,13 +41,6 @@ namespace inventory_materila
             this.label4 = new System.Windows.Forms.Label();
             this.JUMLAH = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -62,6 +55,13 @@ namespace inventory_materila
             this.MASUK = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.DIPINJAM = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,9 +93,9 @@ namespace inventory_materila
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(81, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.Size = new System.Drawing.Size(165, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nama Material";
+            this.label2.Text = "Nama Komponen";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // NAMA
@@ -113,9 +113,9 @@ namespace inventory_materila
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(455, 319);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 25);
+            this.label3.Size = new System.Drawing.Size(153, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Status";
+            this.label3.Text = "Stok Komponen";
             // 
             // STATUS
             // 
@@ -132,9 +132,9 @@ namespace inventory_materila
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(82, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 25);
+            this.label4.Size = new System.Drawing.Size(56, 25);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Jumlah ";
+            this.label4.Text = "Merk";
             // 
             // JUMLAH
             // 
@@ -190,70 +190,6 @@ namespace inventory_materila
             this.dataGridView1.Size = new System.Drawing.Size(1099, 303);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nama_Material";
-            this.Column2.HeaderText = "NAMA MATERIAL";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 175;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "JUMLAH";
-            this.Column3.HeaderText = "JUMLAH";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Tanggal_Masuk";
-            this.Column6.HeaderText = "TANGGAL MASUK";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 175;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Tanggal_Dipinjam";
-            this.Column7.HeaderText = "TANGGAL DIPINJAM";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "STATUS";
-            this.Column4.HeaderText = "STATUS";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "PICTURE";
-            this.Column5.HeaderText = "PICTURE";
-            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // btnAdd
             // 
@@ -335,11 +271,11 @@ namespace inventory_materila
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(253, 20);
+            this.label6.Location = new System.Drawing.Point(453, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(657, 39);
+            this.label6.Size = new System.Drawing.Size(292, 39);
             this.label6.TabIndex = 15;
-            this.label6.Text = "INVENTORY MATERIAL PT. SUPRANET";
+            this.label6.Text = "ZEAMART COMP";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button1
@@ -381,9 +317,9 @@ namespace inventory_materila
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(455, 163);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 25);
+            this.label7.Size = new System.Drawing.Size(160, 25);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Tanggal Masuk";
+            this.label7.Text = "Jenis Komponen";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // MASUK
@@ -402,9 +338,9 @@ namespace inventory_materila
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(455, 239);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 25);
+            this.label8.Size = new System.Drawing.Size(166, 25);
             this.label8.TabIndex = 22;
-            this.label8.Text = "Tanggal Dipinjam";
+            this.label8.Text = "Harga Komponen";
             // 
             // DIPINJAM
             // 
@@ -414,6 +350,70 @@ namespace inventory_materila
             this.DIPINJAM.Name = "DIPINJAM";
             this.DIPINJAM.Size = new System.Drawing.Size(339, 35);
             this.DIPINJAM.TabIndex = 21;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SPAREPART";
+            this.Column2.HeaderText = "NAMA KOMPONEN";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 175;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "BRAND";
+            this.Column3.HeaderText = "MERK";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "JENIS";
+            this.Column6.HeaderText = "JENIS KOMPONEN";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 175;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "HARGA";
+            this.Column7.HeaderText = "HARGA KOMPONEN";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "STOK";
+            this.Column4.HeaderText = "STOK KOMPONEN";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PICTURE";
+            this.Column5.HeaderText = "PICTURE";
+            this.Column5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
             // 
             // Form2
             // 

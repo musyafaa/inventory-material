@@ -14,56 +14,6 @@ namespace inventory_materila
 {
     public partial class Form2 : Form
     {
-        private Color borderColor = Color.MediumSlateBlue;
-        private int borderSize = 2;
-        private bool underlinedStyle = false;
-
-        public Color BorderColor
-        {
-            get
-            {
-                return borderColor;
-            }
-            set
-            {
-                borderColor = value;
-                this.Invalidate();
-        }
-        } 
-        public int BorderSize
-        {
-            get
-            {
-                return borderSize;
-            }
-            set
-            {
-                borderSize = value;
-                this.Invalidate();
-            }
-        }
-        public bool UnderlinedStyle
-        {
-            get
-            {
-               return underlinedStyle;
-            }
-            set
-            {
-                underlinedStyle = value;
-                this.Invalidate();
-            }
-         }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            Graphics graph = e.Graphics;
-
-            //Draw border
-            using (Pen penBorder = new Pen(borderColor, borderSize)) ;
-        }
-
         public Form2()
         {
             InitializeComponent();
@@ -92,13 +42,13 @@ namespace inventory_materila
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string connection = "server=localhost;user id=root;password=;database=computech";
-            string query = "INSERT INTO tbl_material(Nama_Material,Jumlah,Tanggal_Masuk,Tanggal_Dipinjam,Status,Image)VALUES('"+ this.NAMA.Text +"','" + this.JUMLAH.Text + "','" + this.MASUK.Text + "','" + this.DIPINJAM.Text + "','" + this.STATUS.Text + "','" + Path.GetFileName(pictureBox1.ImageLocation) + "')";
+            string query = "INSERT INTO tbl_sparepart(SPAREPART,BRAND,JENIS,HARGA,STOK,IMAGE)VALUES('"+ this.NAMA.Text +"','" + this.JUMLAH.Text + "','" + this.MASUK.Text + "','" + this.DIPINJAM.Text + "','" + this.STATUS.Text + "','" + Path.GetFileName(pictureBox1.ImageLocation) + "')";
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader dr;
             conn.Open();
             dr = cmd.ExecuteReader();
-            MessageBox.Show("Material Berhasil Ditambahkan!");
+            MessageBox.Show("Komponen Berhasil Ditambahkan!");
             conn.Close();
             File.Copy(ImageText.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox1.ImageLocation));
         }
@@ -111,20 +61,20 @@ namespace inventory_materila
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string connection = "server=localhost;user id=root;password=;database=computech";
-            string query = "UPDATE tbl_material SET Nama_Material='"+ this.NAMA.Text + "',Jumlah='" + this.JUMLAH.Text + "',Tanggal_Masuk='" + this.MASUK.Text + "',Tanggal_Dipinjam='" + this.DIPINJAM.Text + "',Status='" + this.STATUS.Text + "' WHERE ID='"+ this.ID.Text +"'";
+            string query = "UPDATE tbl_sparepart SET SPAREPART='"+ this.NAMA.Text + "',BRAND='" + this.JUMLAH.Text + "',JENIS='" + this.MASUK.Text + "',HARGA='" + this.DIPINJAM.Text + "',STOK='" + this.STATUS.Text + "' WHERE ID='"+ this.ID.Text +"'";
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader dr;
             conn.Open();
             dr = cmd.ExecuteReader();
-            MessageBox.Show("Material Berhasil Diupdate");
+            MessageBox.Show("Komponen Berhasil Diupdate");
             conn.Close();
         }
 
         private void btnLoadData_Click(object sender, EventArgs e)
         {
             string connection = "server=localhost;user id=root;password=;database=computech";
-            string query = "SELECT * FROM tbl_material";
+            string query = "SELECT * FROM tbl_sparepart";
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -143,13 +93,13 @@ namespace inventory_materila
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string connection = "server=localhost;user id=root;password=;database=computech";
-            string query = "DELETE FROM tbl_material WHERE ID='"+ this.ID.Text +"'";
+            string query = "DELETE FROM tbl_sparepart WHERE ID='"+ this.ID.Text +"'";
             MySqlConnection conn = new MySqlConnection(connection);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader dr;
             conn.Open();
             dr = cmd.ExecuteReader();
-            MessageBox.Show("Material Berhasil Dihapus");
+            MessageBox.Show("Komponen Berhasil Dihapus");
             conn.Close();
         }
 
@@ -160,14 +110,14 @@ namespace inventory_materila
             MySqlDataAdapter da;
             DataTable dt;
             conn.Open();
-            da = new MySqlDataAdapter("SELECT * FROM tbl_material WHERE Nama_Material LIKE'" + this.textBox1.Text + "%'", conn);
+            da = new MySqlDataAdapter("SELECT * FROM tbl_sparepart WHERE SPAREPART LIKE'" + this.textBox1.Text + "%'", conn);
             dt = new DataTable();
             da.Fill(dt);
             dt.Columns.Add("PICTURE", Type.GetType("System.Byte[]"));
 
             foreach (DataRow row in dt.Rows)
             {
-                row["PICTURE"] = File.ReadAllBytes(Application.StartupPath + @"\Image\" + Path.GetFileName(row["Image"].ToString()));
+                row["PICTURE"] = File.ReadAllBytes(Application.StartupPath + @"\Image\" + Path.GetFileName(row["IMAGE"].ToString()));
             }
             dataGridView1.DataSource = dt;
             conn.Close();
